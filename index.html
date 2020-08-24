@@ -74,7 +74,7 @@
 
       var propiedades = {
         center: coordenadas,
-        zoom: 20
+        zoom: 12
       }
 
       function iniciaMapa() {
@@ -112,7 +112,7 @@
             lng: -101.690486
         }
         var infowindow1 = new google.maps.InfoWindow({
-                                  content: "Unitec"
+                                  content: "Universidad De La Salle Bajio"
         });
         var marker1 = new google.maps.Marker({
             position: coordenadas1,
@@ -125,7 +125,7 @@
         }); 
 
         var infowindow2 = new google.maps.InfoWindow({
-                                  content: "Universidad De La Salle"
+                                  content: "Unitec"
         });
         var marker2 = new google.maps.Marker({
             position: coordenadas2,
@@ -147,7 +147,7 @@
             map: map
         });  
         marker3.addListener('click', function() {
-          infowindow2.open(map, marker3);
+          infowindow3.open(map, marker3);
         });
 
         map.setCenter(coordenadas1); 
