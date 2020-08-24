@@ -111,11 +111,21 @@
             lat: 21.141420, 
             lng: -101.690486
         }
+        var infowindow1 = new google.maps.InfoWindow({
+                                  content: "Unitec"
+        });
         var marker1 = new google.maps.Marker({
             position: coordenadas1,
             icon: icono1,
             scaledSize: new google.maps.Size(50, 50), 
             map: map
+        });
+        marker1.addListener('click', function() {
+          infowindow1.open(map, marker1);
+        }); 
+
+        var infowindow2 = new google.maps.InfoWindow({
+                                  content: "Universidad De La Salle"
         });
         var marker2 = new google.maps.Marker({
             position: coordenadas2,
@@ -123,12 +133,23 @@
             scaledSize: new google.maps.Size(50, 50), 
             map: map
         });
+        marker2.addListener('click', function() {
+          infowindow2.open(map, marker2);
+        });
+
+        var infowindow3 = new google.maps.InfoWindow({
+                                  content: "Universidad De Leon"
+        });
         var marker3 = new google.maps.Marker({
             position:coordenadas3,
             icon: icono3,
             scaledSize: new google.maps.Size(50, 50), 
             map: map
-        });   
+        });  
+        marker3.addListener('click', function() {
+          infowindow2.open(map, marker3);
+        });
+
         map.setCenter(coordenadas1); 
             }
  
