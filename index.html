@@ -81,48 +81,41 @@
 
         map = new google.maps.Map(document.getElementById('map'), propiedades);
 
-        var icono = {
+        var icono1 = {
                 url: "img/4.gif", // url
                 scaledSize: new google.maps.Size(50, 50), // scaled size
                 origin: new google.maps.Point(0,0), // origin
                 anchor: new google.maps.Point(0,0) // anchor
-            };
+        };
+        var icono2 = {
+                url: "img/3.gif", // url
+                scaledSize: new google.maps.Size(50, 50), // scaled size
+                origin: new google.maps.Point(0,0), // origin
+                anchor: new google.maps.Point(0,0) // anchor
+        };
+        var icono3 = {
+                url: "img/4.gif", // url
+                scaledSize: new google.maps.Size(50, 50), // scaled size
+                origin: new google.maps.Point(0,0), // origin
+                anchor: new google.maps.Point(0,0) // anchor
+        };
 
         var marker = new google.maps.Marker({
             position: { lat: 0, lng: 0 },
-            icon: icono,
+            icon: icono1,
             scaledSize: new google.maps.Size(50, 50), 
             map: map
         });
 
- 
-        if (navigator.geolocation) {
-            setInterval(function() {
-                moverPosicion(marker);
-            }, 1000);
-        }  
-
-      }
-
-      function moverPosicion(marker) {
-
-        navigator.geolocation.getCurrentPosition( posicion => {
-            var pos = {
+        var pos = {
               lat: posicion.coords.latitude,
               lng: posicion.coords.longitude
             };
 
-            marker.setPosition( new google.maps.LatLng( posicion.coords.latitude, posicion.coords.longitude ) );
-            map.panTo( new google.maps.LatLng( posicion.coords.latitude, posicion.coords.longitude ) );
-
-            map.setCenter(pos);
-
-        });
-
-      }
-
-
-
+        marker.setPosition( new google.maps.LatLng( posicion.coords.latitude, posicion.coords.longitude ) );
+        map.panTo( new google.maps.LatLng( posicion.coords.latitude, posicion.coords.longitude ) );
+        map.setCenter(pos); 
+            }
  
     </script>
     <script async defer
