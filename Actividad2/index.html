@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="es">
+  <head>
+      <meta charset="utf-8">
+      <meta name="description" content=""> 
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+      <title>JDK+ | Inicio</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/railscasts.min.css">
+      <link rel="stylesheet" href="scribbler-global.css">
+      <link rel="stylesheet" href="scribbler-landing.css"> 
+      <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+      <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+
+      <link rel="author" href="humans.txt">
+  </head>
+  <body>
+    <nav> 
+      <ul class="menu">
+        <div class="menu__item toggle"><span></span></div>
+        <li class="menu__item"><a href="doc.html" class="link link--dark"><i class="fa fa-book"></i> Conclusiones</a></li>
+        <li class="menu__item"><a href="" class="link link--dark"><i class="fa fa-github"></i> Github</a></li>
+      </ul>
+    </nav>
+    <div class="hero">
+      <h1 class="hero__title">JDK+</h1>
+      <p class="hero__description">Comparacion de leaflet vs google maps</p>
+    </div> 
+    <div style="
+    width: 60%;
+    margin: -11rem auto 3rem auto;
+    text-align: left;
+    color: white;
+    background-color: var(--bg-color);
+    border-radius: 4px; 
+    min-height: 285px;
+    animation: fadeUp 2s;
+    box-shadow: 0px 12px 36.8px 9.2px rgba(0, 0, 0, 0.1);">
+      <div class="container"> 
+        <div class="row">
+          <div class="col-12 col-md-5" >
+            <div class="hero" style="padding: 2rem 1rem 1rem 1rem !important;" >
+              <h4 class="hero__title">leaflet</h4> 
+              <div id="mapid" style="width: 600px; min-height: 285px;-webkit-box-flex: 0;
+              -webkit-flex: 0 0 41.666667%;
+              -ms-flex: 0 0 41.666667%;
+              flex: 0 0 100%;
+              max-width: 100%;"> </div>
+            </div> 
+          </div>
+          <div class="col-12 col-md-2" style="background-color: var(--bg-color);"> 
+          </div>
+          <div class="col-12 col-md-5">
+            <div class="hero"  style="padding: 2rem 1rem 1rem 1rem !important;">
+              <h4 class="hero__title">Google maps</h4> 
+              <div id="map" style="width: 600px; min-height: 285px;-webkit-box-flex: 0;
+              -webkit-flex: 0 0 41.666667%;
+              -ms-flex: 0 0 41.666667%;
+              flex: 0 0 100%;
+              max-width: 100%;color: black;"> </div>
+            </div> 
+          </div>
+        </div>
+        
+      </div>
+      
+    </div> 
+    <div class="wrapper">
+      <div class="installation">
+        <h3 class="section__title">Instalacion</h3>
+        <div class="tab__container">
+          <ul class="tab__menu">
+            <li class="tab active" data-tab="leafletinst">Leaflet</li>
+            <li class="tab" data-tab="googlemapsinst">Google maps</li> 
+          </ul>
+          <pre class="nohighlight code">
+            <code class="tab__pane active leafletinst"> 
+              Coloque esto en el encabezado de su código HTML:
+            </code>
+            <code class="tab__pane googlemapsinst">
+              Coloque antes del cierre de tu body de su código HTML:
+            </code> 
+          </pre>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row"> 
+          <div class="col-12 col-md-6" >
+            <h3 class="section__title">Google Maps</h3>
+            <p>Crea mapas altamente personalizables con su propio contenido e imágenes . 
+            Crea aplicaciones ricas y visualizaciones asombrosas de sus datos, 
+            aprovechando la amplitud, precisión y usabilidad de Google Maps y una plataforma web moderna que escala a 
+            medida que crece. </p>
+          </div>
+          <div class="col-12 col-md-6" >
+            <h3 class="section__title">Leaflet</h3>
+          <p>Leaflet es una biblioteca de JavaScript de código abierto para mapas interactivos compatibles con dispositivos móviles. 
+            Está desarrollado por Vladimir Agafonkin de MapBox con un equipo de colaboradores dedicados. 
+            Con un peso de aproximadamente 30 KB de código JS comprimido con gzipped, 
+            tiene todas las características que la mayoría de los desarrolladores necesitan para mapas en línea.</p>
+          </div>
+        </div> 
+      </div>
+      <div class="keybinding">
+        <ul class="keybinding__detail">
+          <h6 class="keybinding__title">Leaflet</h6>
+          <li>Gratis <span class="keybinding__label">-</span></li>
+          <li>Ligero <span class="keybinding__label">-</span></li>
+          <li>Easy API <span class="keybinding__label">-</span></li>
+          <li>OpenStreetMap <span class="keybinding__label">-</span></li>
+          <li>Evolutive via plugins <span class="keybinding__label">-</span></li>
+          <li>Choice of map providers <span class="keybinding__label">-</span></li>
+          <li>Representación inteligente de polilíneas / polígonos <span class="keybinding__label">-</span></li>
+          <li>Arrastre panorámico con inercia <span class="keybinding__label">-</span></li>
+          <li>Zoom multitáctil <span class="keybinding__label">-</span></li>
+          <li>Aceleración de hardware en iOS <span class="keybinding__label">-</span></li>
+        </ul>
+        <ul class="keybinding__detail">
+          <h6 class="keybinding__title">Google maps</h6>
+          <li><span class="keybinding__label">-</span> Gratis</li>
+          <li><span class="keybinding__label">-</span> Google Analytics</li>
+          <li><span class="keybinding__label">-</span> Google Earth API</li>
+          <li><span class="keybinding__label">-</span> Address input through maps api</li> 
+          <li><span class="keybinding__label">-</span> Sharable Directions</li>
+          <li><span class="keybinding__label">-</span> Custom maps designing</li>
+          <li><span class="keybinding__label">-</span> Maps Image APIs</li>
+          <li><span class="keybinding__label">-</span> Places API</li>
+          <li><span class="keybinding__label">-</span> Web Services</li>
+          <li><span class="keybinding__label">-</span> Maps API Licensing</li> 
+          <li><span class="keybinding__label">-</span> Google Maps API for Work</li>  
+        </ul>
+      </div>
+      
+      
+      <div class="callout">
+        <p>Lea nuestros puntos de vista</p>
+        <a href="doc.html" class="button--primary">Conclusiones</a>
+      </div>
+    </div> 
+    <footer class="footer">JDK+ <a href="#" target="_blank" class="link link--light">jdkteam</a>.</footer>
+    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/tether.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="scribbler.js"></script>
+    <script>
+      var mymap = L.map('mapid').setView([51.505, -0.09], 13);
+      L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+        maxZoom: 18,
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+          '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+          'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        id: 'mapbox/streets-v11',
+        tileSize: 512,
+        zoomOffset: -1
+      }).addTo(mymap);
+      L.marker([51.5, -0.09]).addTo(mymap).bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+      var popup = L.popup();
+      function onMapClick(e) {
+        popup
+          .setLatLng(e.latlng)
+          .setContent("You clicked the map at " + e.latlng.toString())
+          .openOn(mymap);
+      }
+    
+      mymap.on('click', onMapClick);
+    
+    </script>
+    <script> 
+      var map;
+      var coordenadas = {
+          lat: 0,
+          lng: 0
+      }
+      var propiedades = {
+          center: coordenadas,
+          zoom: 12
+      }
+      function iniciaMapa() {
+          map = new google.maps.Map(document.getElementById('map'), propiedades); 
+          ///ICONOS
+          var icono1 = {
+              scaledSize: new google.maps.Size(50, 50), // scaled size
+              origin: new google.maps.Point(0, 0), // origin
+              anchor: new google.maps.Point(0, 0) // anchor
+          }; 
+          ///COORDENADAS
+          var coordenadas1 = {
+              lat: 21.152474,
+              lng: -101.711313
+          } 
+          ///MARCADORES Y SU INFORMACION
+          var infowindow1 = new google.maps.InfoWindow({
+              content: "Universidad De La Salle Bajio"
+          });
+          var marker1 = new google.maps.Marker({
+              position: coordenadas1,
+              icon: icono1,
+              scaledSize: new google.maps.Size(50, 50),
+              map: map
+          });
+          marker1.addListener('click', function () {
+              infowindow1.open(map, marker1);
+          }); 
+          map.setCenter(coordenadas1);
+      }
+    </script> 
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsMYDTaWc3Sr5_WUw2dNySgVHOd1l-PxI&callback=iniciaMapa"></script>
+  </body>
+</html>
