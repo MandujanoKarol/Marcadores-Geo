@@ -15,17 +15,23 @@
     
     Mapview.doubleClickZoom.disable()
     var tam=0;
-
+    var poligono=null;
     var posiciones=[]; 
     Mapview.on('dblclick', function(e){    
         tam=document.getElementById('tam').value ; 
         let latLng = Mapview.mouseEventToLatLng(e.originalEvent)    
         console.log(latLng); 
         console.log(tam);   
+
         L.marker([latLng.lat,latLng.lng],{icon: newIcon}).addTo(Mapview);
         posiciones.push(latLng);
-        if(posiciones.length>=tam  ){
-            var poligono=null; 
+
+
+        if(posiciones.length==tam  ){
+            console.log(posiciones);
+            if(poligono!=null && posiciones>=3){
+                L.delete(poligono);
+            }
             poligono=L.polygon([
                 posiciones
             ]).addTo(Mapview);
