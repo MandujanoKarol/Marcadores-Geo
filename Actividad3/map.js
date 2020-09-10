@@ -15,8 +15,20 @@
     var tam=0;
     var poligono=null;
     var posiciones=[]; 
+    var markers=[];
     var tem=0;
-
+    function updatevalues(){
+        if(poligono!=null){
+            poligono.remove();
+        }
+        if(markers.length>0){ 
+            markers.forEach(element => element.remove());
+            markers.length=0;
+        }
+        posiciones=[];
+        poligono=null;
+        tem=0;
+    }
 
     Mapview.on('dblclick', function(e){    
         tam=document.getElementById('tam').value ; 
@@ -25,7 +37,7 @@
        
         if(posiciones.length<tam){
             posiciones.push(latLng);
-            L.marker([latLng.lat,latLng.lng],{icon: newIcon}).addTo(Mapview);
+            markers.push(L.marker([latLng.lat,latLng.lng],{icon: newIcon}).addTo(Mapview));
         }
 
         console.log(posiciones.length);
