@@ -1,40 +1,39 @@
     
     const tilesProvider = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
     let Mapview = L.map('Mapview').setView([21.152334, -101.713132],13)
-    L.tileLayer(tilesProvider,{    maxZoom:17,}).addTo(Mapview)
-    let marker = L.marker([21.152334, -101.713132]).addTo(Mapview)
-    
+    L.tileLayer(tilesProvider,{    maxZoom:17,}).addTo(Mapview) 
     var newIcon = L.icon({    
         iconUrl:'ubicacion.png',    
         iconSize:[60,60],    
         iconAnchor:[30,60],    
         popupAnchor:[-3,-76]}
     )
+     
     
-    L.marker([21.16, -101.8], {icon: newIcon}).addTo(Mapview);
+    Mapview.doubleClickZoom.disable();
     
-    Mapview.doubleClickZoom.disable()
     var tam=0;
     var poligono=null;
     var posiciones=[]; 
+    var tem=0;
+
+
     Mapview.on('dblclick', function(e){    
         tam=document.getElementById('tam').value ; 
-        let latLng = Mapview.mouseEventToLatLng(e.originalEvent)    
-        console.log(latLng); 
-        console.log(tam);   
+        let latLng = Mapview.mouseEventToLatLng(e.originalEvent)   
 
-        L.marker([latLng.lat,latLng.lng],{icon: newIcon}).addTo(Mapview);
-        posiciones.push(latLng);
+       
+        if(posiciones.length<tam){
+            posiciones.push(latLng);
+            L.marker([latLng.lat,latLng.lng],{icon: newIcon}).addTo(Mapview);
+        }
 
-
-        if(posiciones.length==tam  ){
-            console.log(posiciones);
-            if(poligono!=null && posiciones>=3){
-                L.delete(poligono);
-            }
-            poligono=L.polygon([
-                posiciones
-            ]).addTo(Mapview);
+        console.log(posiciones.length);
+        if(posiciones.length==tam && tem==0){  
+                poligono=L.polygon([
+                    posiciones
+                ]).addTo(Mapview);
+                tem=1; 
         }
         
     });
