@@ -51,6 +51,7 @@
                     lat: parseFloat(valor.lat), 
                     lng: parseFloat(valor.lng)
                 }; 
+                
                 console.log("En el índice " + indice + " hay este valor: " + latlng);
                 db.collection('act-2').doc().set({ 
                     "coordenadas":latlng 
