@@ -19,8 +19,15 @@
 
 <h1>Capture la cantidad de lados del poligono</h1>
 <input type="text" id="tam" onclick="updatevalues()"/>
+<button onclick="savecoordfb()" type="button">Guardar en firebase</button>
 <div id="Mapview" style="width: 600px; height: 400px;"></div>
  
+ <!-- The core Firebase JS SDK is always required and must be listed first -->
+ <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-auth.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-firestore.js"></script>
+
 <script src="map.js"></script>
+<script src="bd.js"></script>
 </body>
 </html>
