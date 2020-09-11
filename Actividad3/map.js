@@ -32,20 +32,15 @@
 
     Mapview.on('dblclick', function(e){    
         tam=document.getElementById('tam').value ; 
-        let latLng = Mapview.mouseEventToLatLng(e.originalEvent)   
-
-       
+        let latLng = Mapview.mouseEventToLatLng(e.originalEvent) 
         if(posiciones.length<tam){
             posiciones.push(latLng);
             markers.push(L.marker([latLng.lat,latLng.lng],{icon: newIcon}).addTo(Mapview));
-        }
-
-        console.log(posiciones.length);
+        } 
         if(posiciones.length==tam && tem==0){  
                 poligono=L.polygon([
                     posiciones
                 ]).addTo(Mapview);
                 tem=1; 
-        }
-        
+        } 
     });
