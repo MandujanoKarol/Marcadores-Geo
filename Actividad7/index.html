@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="description" content=""> 
+    <meta name="viewport" content="width=device-width, 
+    initial-scale=1.0, 
+    maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie-edge"/>
+	<title>FB</title> 
+	
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+
+
+	
+</head>
+<style> 
+.opm{
+    visibility: hidden;
+}
+</style>
+<body>
+
+<h1 class="opm">Capture la longitud y latitud</h1>
+<label class="opm">Latitud</label>
+<input type="text" id="lat" class="opm" />
+<label class="opm">Longitud</label>
+<input type="text" id="long" class="opm" />
+<button   type="button" onclick="savecoordfb()" class="opm">Guardar en firebase</button>
+<div id="Mapview" style="width: 600px; height: 400px;"></div>
+ 
+ <!-- The core Firebase JS SDK is always required and must be listed first -->
+ <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+ <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-app.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-auth.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/7.14.1/firebase-firestore.js"></script>
+
+ <script src="bd.js"></script>
+<script src="map.js"></script>
+</body>
+</html>
